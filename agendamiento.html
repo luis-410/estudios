@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar Hora Médica - Posta Miraflores</title>
+    <link rel="stylesheet" href="agendamientocss.css">
+    <script>
+        // Función para validar el formulario
+        function validarFormulario(event) {
+            event.preventDefault(); // Evitar que el formulario se envíe automáticamente
+
+            // Obtener los valores de los campos
+            const nombre = document.getElementById('nombre').value;
+            const fecha = document.getElementById('fecha').value;
+            const hora = document.getElementById('hora').value;
+            const motivo = document.getElementById('motivo').value;
+
+            // Validar que todos los campos estén llenos
+            if (nombre === '' || fecha === '' || hora === '' || motivo === '') {
+                alert('Por favor, complete todos los campos.');
+                return false;
+            }
+
+            // Validar que la fecha y la hora no sean pasadas
+            const fechaSeleccionada = new Date(`${fecha}T${hora}`);
+            const fechaActual = new Date();
+            if (fechaSeleccionada <= fechaActual) {
+                alert('La fecha y hora seleccionadas deben ser futuras.');
+                return false;
+            }
+
+            // Si todo está bien, redirigir a la página de agradecimientos
+            window.location.href = 'agradecimientos.html';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>POSTA MIRAFLORES</h1>
+        <nav>
+            <ul>
+                <li><a href="bienvenida.html">Inicio</a></li>
+                <li><a href="iniciosesion.html">Iniciar Sesión</a></li>
+                <li><a href="registro.html">Registrarse</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="agendar-hora">
+        <h2>Agendar Hora Médica</h2>
+        <p>Selecciona una fecha y hora para tu consulta médica.</p>
+        
+        <form onsubmit="validarFormulario(event)">
+            <label for="nombre">Nombre Completo</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="fecha">Fecha de la Consulta</label>
+            <input type="date" id="fecha" name="fecha" required>
+
+            <label for="hora">Hora de la Consulta</label>
+            <input type="time" id="hora" name="hora" required>
+
+            <label for="motivo">Motivo de la Consulta</label>
+            <textarea id="motivo" name="motivo" required></textarea>
+
+            <button type="submit">Confirmar Hora</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>2024 - Posta Miraflores - Política de Privacidad</p>
+    </footer>
+</body>
+</html>

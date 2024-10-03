@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posta Miraflores - Registro</title>
+    <link rel="stylesheet" href="registrocss.css">
+</head>
+<body>
+    <header>
+        <h1>POSTA MIRAFLORES</h1>
+    </header>
+
+    <section id="registro">
+        <div class="container">
+            <h2>Regístrate</h2>
+            <form>
+                <label for="nombre">Escribe tu nombre</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="correo">Escribe tu correo</label>
+                <input type="email" id="correo" name="correo" required>
+
+                <label for="telefono">Escribe tu teléfono</label>
+                <input type="tel" id="telefono" name="telefono" required>
+
+                <label for="motivo">Motivo de la hora médica</label>
+                <textarea id="motivo" name="motivo"></textarea>
+
+                <!-- Botón para enviar el formulario -->
+                <button type="button" class="btn-enviar" onclick="window.location.href='registroexitoso.html'">Enviar</button>
+            </form>
+        </div>
+
+        <!-- Botón de Inicio debajo del formulario -->
+        <div class="boton-inicio-container">
+            <a href="bienvenida.html" class="btn-inicio">Inicio</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>2024 - Posta Miraflores - Política de Privacidad</p>
+    </footer>
+</body>
+</html>

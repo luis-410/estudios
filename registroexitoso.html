@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Exitoso - Posta Miraflores</title>
+    <link rel="stylesheet" href="registroexitosocss.css">
+    <script>
+        // Función para redirigir al agendamiento
+        function agendarHora() {
+            window.location.href = 'agendamiento.html';
+        }
+    </script>
+</head>
+<body>
+    <section id="success-message">
+        <h2>¡Registro Exitoso!</h2>
+        <p>Te has registrado correctamente. Ya puedes iniciar sesión y agendar tus consultas médicas.</p>
+        <!-- El botón llama a la función agendarHora -->
+        <button onclick="agendarHora()">Agendar hora</button>
+    </section>
+</body>
+</html>

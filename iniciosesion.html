@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Posta Miraflores</title>
+    <link rel="stylesheet" href="iniciosesioncss.css">
+    <script>
+        // Función para validar el formulario de inicio de sesión
+        function validarFormulario(event) {
+            event.preventDefault(); // Evitar que el formulario se envíe automáticamente
+
+            var correo = document.getElementById("correo").value;
+            var contrasena = document.getElementById("contrasena").value;
+
+            // Verificar que los campos no estén vacíos
+            if (correo === "" || contrasena === "") {
+                alert("Por favor, rellena todos los campos.");
+                return false;
+            }
+
+            // Si todo es correcto, redirige a la página de inicio exitoso
+            window.location.href = 'inicioexitoso.html';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>POSTA MIRAFLORES</h1>
+        <nav>
+            <ul>
+                <li><a href="bienvenida.html">Inicio</a></li>
+                <li><a href="registro.html">Registrarse</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="login">
+        <h2>Iniciar Sesión</h2>
+        <form onsubmit="validarFormulario(event)">
+            <label for="correo">Correo Electrónico</label>
+            <input type="email" id="correo" name="correo" required>
+
+            <label for="contrasena">Contraseña</label>
+            <input type="password" id="contrasena" name="contrasena" required>
+
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>2024 - Posta Miraflores - Política de Privacidad</p>
+    </footer>
+</body>
+</html>
+
